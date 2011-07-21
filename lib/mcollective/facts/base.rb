@@ -35,10 +35,10 @@ module MCollective
                             raise "Got empty facts" if tfacts.empty?
 
                             @facts.clear
-
-                            tfacts.each_pair do |key,value|
-                                @facts[key.to_s] = value.to_s
-                            end
+#                            tfacts.each_pair do |key,value|
+#                                @facts[key.to_s] = value.to_s
+#                            end
+                            @facts = tfacts
 
                             @last_good_facts = @facts.clone
                             @last_facts_load = Time.now.to_i
